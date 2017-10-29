@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+
+import math
+from numpy import sign
+from sympy import *
+
 ''' root = bisection(f,x1,x2,switch=0,tol=1.0e-9)
 	Finds a root of f(x)=0 by the bisection method.
 	Root is bracketed by (x1,x2).
 	Switch is set to 1 for the root, else 0 for instability.
 '''
-
-import math
-from numpy import sign
-from sympy import *
 
 def bisection(f,x1,x2,switch=1,tol=1.0e-9):
 	f1 = f(x1)
@@ -33,6 +34,12 @@ def bisection(f,x1,x2,switch=1,tol=1.0e-9):
 			x1 = x3; f1 = f3
 		else: x2 = x3; f2 = f3
 	return (x1 + x2)/2.0
+
+
+''' root = newtonRaphson(f,guessX,precision=1.0e-9)
+	Finds a root of f(x)=0 by the Newton Raphson method.
+	Uses symbolic differentiation to get to the root from the initial guess.
+'''
 
 def newtonRaphson(f,guessX,precision=1.0e-9):
 	''' Inspired by https://devopslog.wordpress.com/2012/12/23/newton-raphson-method-using-python-sympy/
