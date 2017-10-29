@@ -6,6 +6,8 @@ GUI Portion of the Numerical Swissknife
 """
 
 import sys
+import numpy as np
+from io import StringIO
 from sympy import *
 from PyQt5 import uic
 from PyQt5.QtWidgets import (QApplication, QWidget, qApp, QDesktopWidget, 
@@ -28,6 +30,16 @@ class MyApp(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.btnQuit.clicked.connect(qApp.quit)
         self.btnCalcRoot.clicked.connect(self.calcRootNR)
+        self.btnCalcLAS.clicked.connect(self.calcLASnGE)
+
+
+    def calcLASnGE(self):
+       A = np.matrix(np.loadtxt(StringIO(self.inpTextLA.toPlainText())))
+       b = np.fromstring(self.inpVecB.text(),sep=' ')
+       classAns = las.gaussElim(A,b)
+       self.outTextLA.append("The matrix A is \n" + str(A))
+       self.outTextLA.append("\nThe vector b is \n" + str(b.reshape((-1, 1))))
+       self.outTextLA.append("\nThe X vector is \n" + str(classAns.x.reshape((-1,1))))
 
 
     def calcRootNR(self):
