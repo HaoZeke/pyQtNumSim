@@ -6,6 +6,12 @@
 
 guiNumKnife is an attempt to ease the burden of undergraduate B.Tech coursework, and maybe even foster interest.
 
+## TO-DO
+
+- Check Secant
+- Add Max Iterations for secant
+- Hide and enable UI elements per method 
+
 ## Methods Covered
 The methods (modules) are:
 1. Root Finding
