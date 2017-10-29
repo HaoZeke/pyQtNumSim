@@ -12,20 +12,29 @@ from sympy import *
 	Switch is set to 1 for the root, else 0 for instability.
 '''
 
-def bisection(f,x1,x2,switch=1,tol=1.0e-9):
-	f1 = f(x1)
+def bisection(f,x1,x2,tol=1.0e-9,switch=1):
+	# Variable Definition
+	sym_x = Symbol('x')
+
+	# Conversion attempt
+	try:
+		fx = S(f)
+	except:
+		sys.exit('Unable to convert function to symbolic expression.')
+
+	f1 = fx.subs({sym_x : x1})
 	if f1 == 0.0 : return x1	
 	
-	f2 = f(x2)
+	f2 = fx.subs({sym_x : x2})
 	if f2 == 0.0 : return x2
 
-	if sign(f1) == sign(f2):
+	if not (f1*f2 < 0):
 		print('Root is not bracketed')
 	
 	n = int(math.ceil(math.log(abs(x2-x1)/tol)/math.log(2)))
 
 	for i in range(n):
-		x3 = 0.5*(x1+x2); f3 = f(x3)
+		x3 = 0.5*(x1+x2); f3 = fx.subs({sym_x : x3})
 		if (switch == 1) and (abs(f3) > abs(f1)) \
 		and (abs(f3) > abs(f2)):
 			return None
@@ -33,7 +42,12 @@ def bisection(f,x1,x2,switch=1,tol=1.0e-9):
 		if sign(f2) != sign(f3):
 			x1 = x3; f1 = f3
 		else: x2 = x3; f2 = f3
-	return (x1 + x2)/2.0
+	# Get the value at the root	
+	# Declare a result tuple
+	r = 0.5*(x1 + x2)
+	xval = fx.subs({sym_x : r},)
+	result = (r,n,xval)
+	return result
 
 
 ''' root = newtonRaphson(f,guessX,precision=1.0e-9)
@@ -82,3 +96,5 @@ def newtonRaphson(f,guessX,precision=1.0e-9):
 	# Declare a result tuple
 	result = (r,niter,xval)
 	return result
+
+
