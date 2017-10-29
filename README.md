@@ -16,7 +16,7 @@ The methods (modules) are:
 2. Simultaneous Linear Equations
     i. Gauss Seidel
     ii. Gauss Jordan
-    iii. Gauss Elimination
+    iii. Gauss Elimination (Naive + Pivoting)
 3. ODE
     i. Milne's Method
     ii. Runge-Kutta Methods
