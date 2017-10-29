@@ -98,3 +98,52 @@ def newtonRaphson(f,guessX,precision=1.0e-9):
 	return result
 
 
+''' root = secant(f,x1,x2,tol=1.0e-9,maxIter=1.0e4)
+	Finds a root of f(x)=0 by the secant method.
+	Root is bracketed by (x1,x2).
+	Switch is set to 1 for the root, else 0 for instability.
+'''
+
+def secant(f,x1,x2,tol=1.0e-9,maxIter=100):
+	# Variable Definition
+	sym_x = Symbol('x')
+	
+	# Conversion attempt
+	try:
+		fx = S(f)
+	except:
+		sys.exit('Unable to convert function to symbolic expression.')
+
+
+	# e is the relative error between consecutive approximations
+	e = 1
+	niter = 0
+
+	f1 = fx.subs({sym_x : x1})
+	if f1 == 0.0 : return x1	
+	
+	f2 = fx.subs({sym_x : x2})
+	if f2 == 0.0 : return x2
+	
+	while ( e > tol ):
+		# Get a new approximation
+		try:
+			f1 = fx.subs({sym_x : x1})
+			f2 = fx.subs({sym_x : x2})
+			x3 = x2 - (f2*(x2-x1))/(f2-f1); f3 = fx.subs({sym_x : x3})
+		except ZeroDivisionError:
+			print("Division by Zero. Terminate")
+			sys.exit()
+		# Update the error
+		e = abs((x3-x2)/x3)
+		niter += 1
+		x1 = x3
+		if niter > 100:
+			break
+
+	# Get the value at the root	
+	xval = fx.subs({sym_x : x3},)
+	itr = niter - 1
+	# Declare a result tuple
+	result = (x3,itr,xval)
+	return result

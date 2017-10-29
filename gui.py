@@ -45,6 +45,10 @@ class MyApp(QMainWindow, Ui_MainWindow):
                 # self.label_11.setEnabled(False)
                 # self.guessX.setEnabled(False)
                 self.calcRootBi()
+            if self.inpSec.isChecked() == true:
+                # self.label_11.setEnabled(False)
+                # self.guessX.setEnabled(False)
+                self.calcRootSec()
             if self.btnGrpRF.checkedId() == -1:
                 QMessageBox.warning(self, "User Warning","Choose a method.")
         except Exception as e:
@@ -68,9 +72,9 @@ class MyApp(QMainWindow, Ui_MainWindow):
                 x,niter,xval = roots.newtonRaphson(f,gX)
             self.outTextRoot.append("<b> Newton-Raphson Method </b><br> \
                 For the function " + self.funcInpRoot.text())
-            self.outTextRoot.append(" The root is approximately " + repr(x))
-            self.outTextRoot.append(" After " + str(niter) + " iterations.")
-            self.outTextRoot.append(" At the approximate root, the function is " \
+            self.outTextRoot.append("The root is approximately " + repr(x))
+            self.outTextRoot.append("After " + str(niter) + " iterations.")
+            self.outTextRoot.append("At the approximate root, the function is " \
              + repr(xval))
 
     def calcRootBi(self):
@@ -87,10 +91,34 @@ class MyApp(QMainWindow, Ui_MainWindow):
                 x,niter,xval = roots.bisection(f,lBound,uBound)
             self.outTextRoot.append("<b> Bisection Method </b><br> \
              For the function " + self.funcInpRoot.text())
-            self.outTextRoot.append(" The root is approximately " + repr(x))
-            self.outTextRoot.append(" After " + str(niter) + " iterations.")
-            self.outTextRoot.append(" At the approximate root, the function is " \
+            self.outTextRoot.append("The root is approximately " + repr(x))
+            self.outTextRoot.append("After " + str(niter) + " iterations.")
+            self.outTextRoot.append("At the approximate root, the function is " \
              + repr(xval))
+
+    def calcRootSec(self):
+        # Needs user input for max iter.
+        f = self.funcInpRoot.text()
+        if not f:
+            QMessageBox.warning(self, "User Warning","Enter an equation.")
+        else:
+            approxOne = self.lowerBound.value()
+            approxTwo = self.upperBound.value()
+            if self.precisionRF.text():
+                preci = float(self.precisionRF.text())
+                x,niter,xval = roots.secant(f,approxOne,approxTwo,tol=preci)
+            else:
+                x,niter,xval = roots.secant(f,approxOne,approxTwo)
+            self.outTextRoot.append("<b> Secant Method </b><br> \
+             For the function " + self.funcInpRoot.text())
+            self.outTextRoot.append("The root is approximately " + repr(x))
+            if niter < 100:
+                self.outTextRoot.append("After " + str(niter) + " iterations.")
+            else:
+                self.outTextRoot.append("After the maximum allowed iterations.")
+            self.outTextRoot.append("At the approximate root, the function is " \
+             + repr(xval))
+
 
 
     def calcLASnGE(self):
