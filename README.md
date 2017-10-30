@@ -11,7 +11,9 @@ guiNumKnife is an attempt to ease the burden of undergraduate B.Tech coursework,
 - Check Secant
 - Add Max Iterations for secant
 - Hide and enable UI elements per method
-- Use Naive Gauss Elimination Again 
+- Use Naive Gauss Elimination Again
+- Show steps for everything
+- Plot 
 
 ## Methods Covered
 The methods (modules) are:
