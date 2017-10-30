@@ -12,6 +12,7 @@ guiNumKnife is an attempt to ease the burden of undergraduate B.Tech coursework,
 - Add Max Iterations for secant
 - Hide and enable UI elements per method
 - Use Naive Gauss Elimination Again
+- Unbreak pivoting for Gauss Jordan
 - Show steps for everything
 - Plot 
 

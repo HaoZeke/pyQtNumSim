@@ -161,6 +161,15 @@ class MyApp(QMainWindow, Ui_MainWindow):
        self.outTextLA.append("\nThe vector b is \n" + str(b.reshape((-1, 1))))
        self.outTextLA.append("\nThe X vector is \n" + str(classAns.x.reshape((-1,1))))
 
+    def calcLASGJ(self):
+       A = np.matrix(np.loadtxt(StringIO(self.inpTextLA.toPlainText())))
+       b = np.fromstring(self.inpVecB.text(),sep=' ')
+       classAns = las.gaussJordan(A,b)
+       self.outTextLA.append("<b> Gauss Jordan Method </b><br>")
+       self.outTextLA.append("The matrix A is \n" + str(A))
+       self.outTextLA.append("\nThe vector b is \n" + str(b.reshape((-1, 1))))
+       self.outTextLA.append("\nThe X vector is \n" + str(classAns.reshape((-1,1))))
+
     def calcLASGS(self):
        A = np.matrix(np.loadtxt(StringIO(self.inpTextLA.toPlainText())))
        b = np.fromstring(self.inpVecB.text(),sep=' ')

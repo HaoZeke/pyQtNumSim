@@ -354,7 +354,7 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Input a &lt;span style=&quot; text-decoration: underline;&quot;&gt;single variable&lt;/span&gt; function in terms of &lt;span style=&quot; font-weight:600;&quot;&gt;x&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="placeholderText">
-          <string>1000</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -415,6 +415,9 @@
          </property>
          <property name="text">
           <string/>
+         </property>
+         <property name="placeholderText">
+          <string>1000</string>
          </property>
         </widget>
        </item>

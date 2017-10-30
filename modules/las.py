@@ -88,7 +88,6 @@ class gaussElim():
 
     def _backsub(self):
         # Back Substitution
-
         self.x = np.zeros(self.n)
         for k in range(self.n - 1, -1, -1):
             self.x[k] = (self.b[k] - np.dot(self.A[k, k + 1:], self.x[k + 1:])) / self.A[k, k]
@@ -121,3 +120,35 @@ def gaussSeidel(A, b, itrMax = 1000):
         old_x = copy.deepcopy(x)
     
     return x,k
+
+
+def gaussJordan(A,b):
+    """
+    Returns the vector x such that Ax=b.
+    
+    A is assumed to be an n by n matrix and b an n-element vector.
+    """
+    n,m = A.shape
+    # should put in some checks of our assumptions, e.g. n == m
+    C = np.zeros((n,m+1),float)
+    C[:,0:n],C[:,n] = A, b
+
+    for j in range(n):
+        # First, do partial pivoting.
+        p = j # the current diagonal element is pivot by default
+        # look for alternate pivot by searching for largest element in column
+        for i in range(j+1,n):
+            if abs(C[i,j]) > abs(C[p,j]): p = i
+        if abs(C[p,j]) < 1.0e-16:
+            print("matrix is (likely) singular")
+            return b 
+        # swap rows to get largest magnitude element on the diagonal (BROKEN)
+        # C[p,:],C[j,:] = copy(C[j,:]),copy(C[p,:])
+        # Now, do scaling and elimination.
+        pivot = C[j,j]
+        C[j,:] = C[j,:] / pivot
+        for i in range(n):
+            if i == j: continue
+            C[i,:] = C[i,:] - C[i,j]*C[j,:]
+    I,x = C[:,0:n],C[:,n]
+    return x
