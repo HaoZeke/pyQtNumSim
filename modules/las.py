@@ -95,7 +95,8 @@ class gaussElim():
 
 
 def gaussSeidel(A, b, itrMax = 1000):
-	# From https://gist.github.com/szknbyk/07542a8cca549fd1315aedba53c6511c 
+	# From https://gist.github.com/szknbyk/07542a8cca549fd1315aedba53c6511c
+	# Check https://www.wikiwand.com/en/Gauss%E2%80%93Seidel_method too.	
     if A.shape[1] != b.shape[0]:
         return 0
     
