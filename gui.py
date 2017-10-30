@@ -20,9 +20,6 @@ qtCreatorFile = "testUI.ui" # Enter file here.
  
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
-def out():
-    print("Hi")
-
 class MyApp(QMainWindow, Ui_MainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
@@ -30,7 +27,7 @@ class MyApp(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.btnQuit.clicked.connect(qApp.quit)
         self.btnCalcRoot.clicked.connect(self.calcRootMenu)
-        self.btnCalcLAS.clicked.connect(self.calcLASnGE)
+        self.btnCalcLAS.clicked.connect(self.calcLASMenu)
 
 
     def calcRootMenu(self):
@@ -38,20 +35,12 @@ class MyApp(QMainWindow, Ui_MainWindow):
             if self.inpNR.isChecked() == true:
                 # self.label_22.setEnabled(False)
                 # self.upperBound.setEnabled(False)
-                # self.label_23.setEnabled(False)
-                # self.lowerBound.setEnabled(False)
                 self.calcRootNR()
             if self.inpBi.isChecked() == true:
-                # self.label_11.setEnabled(False)
-                # self.guessX.setEnabled(False)
                 self.calcRootBi()
             if self.inpSec.isChecked() == true:
-                # self.label_11.setEnabled(False)
-                # self.guessX.setEnabled(False)
                 self.calcRootSec()
             if self.inpRegF.isChecked() == true:
-                # self.label_11.setEnabled(False)
-                # self.guessX.setEnabled(False)
                 self.calcRootRegFal()
             if self.btnGrpRF.checkedId() == -1:
                 QMessageBox.warning(self, "User Warning","Choose a method.")
@@ -143,16 +132,49 @@ class MyApp(QMainWindow, Ui_MainWindow):
             self.outTextRoot.append("At the approximate root, the function is " \
              + repr(xval))
 
+    def calcLASMenu(self):
+        try:
+            if self.inpGE.isChecked() == true:
+                # self.label_22.setEnabled(False)
+                # self.upperBound.setEnabled(False)
+                self.calcLASGEP()
+            if self.inpGJ.isChecked() == true:
+                self.calcLASGJ()
+            if self.inpGS.isChecked() == true:
+                self.calcLASGS()
+            if self.btnGrpLAS.checkedId() == -1:
+                QMessageBox.warning(self, "User Warning","Choose a method.")
+        except Exception as e:
+            raise
+        else:
+            pass
+        finally:
+            pass
+            
 
-
-    def calcLASnGE(self):
+    def calcLASGEP(self):
        A = np.matrix(np.loadtxt(StringIO(self.inpTextLA.toPlainText())))
        b = np.fromstring(self.inpVecB.text(),sep=' ')
        classAns = las.gaussElim(A,b)
+       self.outTextLA.append("<b> Gauss Elimination Method </b><br>")
        self.outTextLA.append("The matrix A is \n" + str(A))
        self.outTextLA.append("\nThe vector b is \n" + str(b.reshape((-1, 1))))
        self.outTextLA.append("\nThe X vector is \n" + str(classAns.x.reshape((-1,1))))
 
+    def calcLASGS(self):
+       A = np.matrix(np.loadtxt(StringIO(self.inpTextLA.toPlainText())))
+       b = np.fromstring(self.inpVecB.text(),sep=' ')
+       if self.inpLASMaxItr.text():
+           maxIter = int(self.inpLASMaxItr.text())
+           x,itr = las.gaussSeidel(A,b, itrMax = maxIter)
+       else:
+           x,itr = las.gaussSeidel(A,b)
+       x,itr = las.gaussSeidel(A,b)
+       self.outTextLA.append("<b> Gauss Seidel Method </b><br>")
+       self.outTextLA.append("The matrix A is \n" + str(A))
+       self.outTextLA.append("\nThe vector b is \n" + str(b.reshape((-1, 1))))
+       self.outTextLA.append("\nThe X vector is \n" + str(x.reshape((-1,1))))
+       self.outTextLA.append("\nObtained in \n" + str(itr) + " iterations.")
 
 
 if __name__ == "__main__":

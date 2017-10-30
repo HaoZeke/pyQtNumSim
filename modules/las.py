@@ -8,6 +8,8 @@
 '''
 
 import numpy as np
+from scipy import linalg as LA
+import copy
 
 def nGaussElim():
 	n = len(b)
@@ -90,3 +92,31 @@ class gaussElim():
         self.x = np.zeros(self.n)
         for k in range(self.n - 1, -1, -1):
             self.x[k] = (self.b[k] - np.dot(self.A[k, k + 1:], self.x[k + 1:])) / self.A[k, k]
+
+
+def gaussSeidel(A, b, itrMax = 1000):
+	# From https://gist.github.com/szknbyk/07542a8cca549fd1315aedba53c6511c 
+    if A.shape[1] != b.shape[0]:
+        return 0
+    
+    n = b.shape[0]
+    
+    x = np.zeros(n)
+    old_x = np.zeros(n)
+    
+    for k in range(itrMax):
+        for i in range(n):
+            x[i] = b[i]
+            
+            for j in range(n):
+                if i != j:
+                    x[i] -= A[i, j] * x[j]
+                    
+            x[i] = x[i] / A[i, i]
+        
+        if LA.norm(x - old_x) < 1.0e-20:
+            break
+        
+        old_x = copy.deepcopy(x)
+    
+    return x,k
