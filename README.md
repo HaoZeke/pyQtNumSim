@@ -4,6 +4,9 @@
 
 pyQtNumSim is an attempt to ease the burden of undergraduate B.Tech coursework, and maybe even foster interest.
 
+![Root Finders Tab](img/blankRF.png "Root Finders")
+![Linear Algebra Solvers Tab](img/blankLAS.png "Linear Algebra Solvers")
+
 ## TO-DO
 
 - Check Secant
