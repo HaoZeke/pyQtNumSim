@@ -1,4 +1,4 @@
-# pyQtNumSim 
+# pyQtNumSim  [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/HaoZeke/5)
 
 > Copyright (C) 2017  Rohit Goswami
 
