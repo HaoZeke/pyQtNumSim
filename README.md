@@ -1,10 +1,8 @@
-# guiNumKnife ![Travis](https://img.shields.io/travis/fspoettel/blaupause.svg?maxAge=2592000?style=flat-square)
+# pyQtNumSim 
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/fspoettel/blaupause.svg)](https://greenkeeper.io/)
+> Copyright (C) 2017  Rohit Goswami
 
-> Copyright (C) <2017>  <Rohit Goswami>
-
-guiNumKnife is an attempt to ease the burden of undergraduate B.Tech coursework, and maybe even foster interest.
+pyQtNumSim is an attempt to ease the burden of undergraduate B.Tech coursework, and maybe even foster interest.
 
 ## TO-DO
 
@@ -19,30 +17,34 @@ guiNumKnife is an attempt to ease the burden of undergraduate B.Tech coursework,
 ## Methods Covered
 The methods (modules) are:
 1. Root Finding
-    i. Bisection
-    ii. Newton Raphson
-    iii. Regula Falsi
-    iv. Secant
+
+* Bisection
+* Newton Raphson
+* Regula Falsi
+* Secant
+
 2. Simultaneous Linear Equations
-    i. Gauss Seidel
-    ii. Gauss Jordan
-    iii. Gauss Elimination (Naive + Pivoting)
+
+* Gauss Seidel
+* Gauss Jordan
+* Gauss Elimination (Naive + Pivoting)
+    
 3. ODE
-    i. Milne's Method
-    ii. Runge-Kutta Methods
-        * RK - I (Euler)
-        * RK - II
-        * RK - III
-        * RK - IV
+
+* Milne's Method
+* Runge-Kutta - I (Euler)
+* Runge-Kutta - II
+* Runge-Kutta - III
+* Runge-Kutta - IV
 
 ## Acknowledgments
 This software is built on the following (incomplete):
 
-- PyQt 5
-- Python 3
-- Qt Designer
-- PyInstaller
-- SymPy
+- [PyQt 5](https://www.riverbankcomputing.com/software/pyqt/download5)
+- [Python 3](https://www.python.org)
+- [Qt Designer](doc.qt.io/qt-5/qtdesigner-manual.html)
+- [PyInstaller](www.pyinstaller.org/)
+- [SymPy](http://www.sympy.org/)
 
 Additionally the following books and resources have been used (also mentioned in-code):
 
