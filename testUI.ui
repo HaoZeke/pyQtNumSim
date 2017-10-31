@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1017</width>
-    <height>662</height>
+    <width>1108</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,12 +19,12 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>961</width>
-      <height>511</height>
+      <width>971</width>
+      <height>531</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tabRF">
      <attribute name="title">
@@ -40,19 +40,6 @@
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="1">
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
        <item row="0" column="0">
         <layout class="QFormLayout" name="formLayout_2">
          <item row="1" column="0" colspan="2">
@@ -99,46 +86,26 @@
            </property>
           </widget>
          </item>
-         <item row="5" column="0">
+         <item row="6" column="0">
           <widget class="QLabel" name="label_22">
            <property name="enabled">
             <bool>true</bool>
+           </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;These will be the &lt;span style=&quot; font-weight:600;&quot;&gt;approximations&lt;/span&gt; to the root for the &lt;span style=&quot; text-decoration: underline;&quot;&gt;Secant&lt;/span&gt; and &lt;span style=&quot; text-decoration: underline;&quot;&gt;Reular Falsi&lt;/span&gt; methods.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="text">
             <string>Lower Bound</string>
            </property>
           </widget>
          </item>
-         <item row="5" column="1">
+         <item row="6" column="1">
           <widget class="QDoubleSpinBox" name="lowerBound">
            <property name="enabled">
             <bool>true</bool>
            </property>
-           <property name="decimals">
-            <number>10</number>
-           </property>
-           <property name="minimum">
-            <double>-99999.000000000000000</double>
-           </property>
-           <property name="maximum">
-            <double>99999.990000000005239</double>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="label_23">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="text">
-            <string>Upper Bound</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="1">
-          <widget class="QDoubleSpinBox" name="upperBound">
-           <property name="enabled">
-            <bool>true</bool>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;These will be the &lt;span style=&quot; font-weight:600;&quot;&gt;approximations&lt;/span&gt; to the root for the &lt;span style=&quot; text-decoration: underline;&quot;&gt;Secant&lt;/span&gt; and &lt;span style=&quot; text-decoration: underline;&quot;&gt;Reular Falsi&lt;/span&gt; methods.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="decimals">
             <number>10</number>
@@ -152,13 +119,45 @@
           </widget>
          </item>
          <item row="7" column="0">
+          <widget class="QLabel" name="label_23">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;These will be the &lt;span style=&quot; font-weight:600;&quot;&gt;approximations&lt;/span&gt; to the root for the &lt;span style=&quot; text-decoration: underline;&quot;&gt;Secant&lt;/span&gt; and &lt;span style=&quot; text-decoration: underline;&quot;&gt;Reular Falsi&lt;/span&gt; methods.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="text">
+            <string>Upper Bound</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="QDoubleSpinBox" name="upperBound">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;These will be the &lt;span style=&quot; font-weight:600;&quot;&gt;approximations&lt;/span&gt; to the root for the &lt;span style=&quot; text-decoration: underline;&quot;&gt;Secant&lt;/span&gt; and &lt;span style=&quot; text-decoration: underline;&quot;&gt;Reular Falsi&lt;/span&gt; methods.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="decimals">
+            <number>10</number>
+           </property>
+           <property name="minimum">
+            <double>-99999.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>99999.990000000005239</double>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0">
           <widget class="QLabel" name="label_16">
            <property name="text">
             <string>Method</string>
            </property>
           </widget>
          </item>
-         <item row="7" column="1">
+         <item row="8" column="1">
           <widget class="QRadioButton" name="inpBi">
            <property name="text">
             <string>Bisection</string>
@@ -168,7 +167,7 @@
            </attribute>
           </widget>
          </item>
-         <item row="8" column="1">
+         <item row="9" column="1">
           <widget class="QRadioButton" name="inpNR">
            <property name="text">
             <string>Newton Raphson</string>
@@ -178,7 +177,7 @@
            </attribute>
           </widget>
          </item>
-         <item row="9" column="1">
+         <item row="10" column="1">
           <widget class="QRadioButton" name="inpRegF">
            <property name="text">
             <string>Regula Falsi</string>
@@ -188,7 +187,7 @@
            </attribute>
           </widget>
          </item>
-         <item row="10" column="1">
+         <item row="11" column="1">
           <widget class="QRadioButton" name="inpSec">
            <property name="text">
             <string>Secant</string>
@@ -198,7 +197,7 @@
            </attribute>
           </widget>
          </item>
-         <item row="13" column="0">
+         <item row="14" column="0">
           <spacer name="verticalSpacer_3">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
@@ -211,7 +210,7 @@
            </property>
           </spacer>
          </item>
-         <item row="14" column="0" colspan="2">
+         <item row="15" column="0" colspan="2">
           <widget class="QPushButton" name="btnCalcRoot">
            <property name="text">
             <string>Calculate</string>
@@ -256,6 +255,19 @@
           <widget class="QTextBrowser" name="outTextRoot"/>
          </item>
         </layout>
+       </item>
+       <item row="0" column="1">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </widget>
@@ -331,20 +343,10 @@
          </attribute>
         </widget>
        </item>
-       <item row="1" column="4" rowspan="9">
-        <widget class="QTextBrowser" name="outTextLA"/>
-       </item>
        <item row="5" column="0">
         <widget class="QLabel" name="label_21">
          <property name="text">
           <string>Vector b</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="1">
-        <widget class="QPushButton" name="btnCalcLAS">
-         <property name="text">
-          <string>Calculate</string>
          </property>
         </widget>
        </item>
@@ -421,6 +423,16 @@
          </property>
         </widget>
        </item>
+       <item row="11" column="0" colspan="2">
+        <widget class="QPushButton" name="btnCalcLAS">
+         <property name="text">
+          <string>Calculate</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4" rowspan="11">
+        <widget class="QTextBrowser" name="outTextLA"/>
+       </item>
       </layout>
      </widget>
     </widget>
@@ -428,26 +440,16 @@
      <attribute name="title">
       <string>ODE Solvers</string>
      </attribute>
-     <widget class="QWidget" name="formLayoutWidget">
+     <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>4</y>
-        <width>340</width>
-        <height>411</height>
+        <x>10</x>
+        <y>10</y>
+        <width>931</width>
+        <height>471</height>
        </rect>
       </property>
-      <layout class="QFormLayout" name="formLayout">
-       <item row="2" column="0">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Function</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="funcInpODE"/>
-       </item>
+      <layout class="QGridLayout" name="gridLayout_2">
        <item row="3" column="0">
         <widget class="QLabel" name="label_2">
          <property name="text">
@@ -455,10 +457,43 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
-        <widget class="QDoubleSpinBox" name="startX">
+       <item row="7" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Method</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4">
+        <spacer name="verticalSpacer_6">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="6" column="2">
+        <widget class="QDoubleSpinBox" name="stepSize">
+         <property name="toolTip">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defaults to &lt;span style=&quot; font-weight:600;&quot;&gt;0.025&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
          <property name="decimals">
           <number>10</number>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="toolTip">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defaults to &lt;span style=&quot; font-weight:600;&quot;&gt;0.025&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Step size</string>
          </property>
         </widget>
        </item>
@@ -469,10 +504,13 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
-        <widget class="QDoubleSpinBox" name="startY">
-         <property name="decimals">
-          <number>10</number>
+       <item row="2" column="5" rowspan="12">
+        <widget class="QTextBrowser" name="outTextODE"/>
+       </item>
+       <item row="10" column="2">
+        <widget class="QRadioButton" name="inpRK4">
+         <property name="text">
+          <string>Runge Kutta Fourth Order</string>
          </property>
         </widget>
        </item>
@@ -483,95 +521,48 @@
          </property>
         </widget>
        </item>
-       <item row="5" column="1">
-        <widget class="QDoubleSpinBox" name="endX">
-         <property name="decimals">
-          <number>10</number>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>Step size</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QDoubleSpinBox" name="stepSize">
-         <property name="decimals">
-          <number>10</number>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0">
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>Decimal Places</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
-        <widget class="QSpinBox" name="decPlace"/>
-       </item>
-       <item row="8" column="0">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>Method</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="1">
-        <widget class="QRadioButton" name="inpEu">
-         <property name="text">
-          <string>Euler</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="1">
-        <widget class="QRadioButton" name="inpImEu">
-         <property name="text">
-          <string>Improved Euler</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="1">
-        <widget class="QRadioButton" name="inpRun">
-         <property name="text">
-          <string>Runge Kutta</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="0" colspan="2">
+       <item row="13" column="0" colspan="3">
         <widget class="QPushButton" name="btnCalcODE">
          <property name="text">
           <string>Calculate</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="0" colspan="2">
-        <widget class="QLabel" name="label_9">
+       <item row="2" column="0">
+        <widget class="QLabel" name="label">
          <property name="text">
-          <string>Input:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
+          <string>Function</string>
          </property>
         </widget>
        </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="verticalLayoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>610</x>
-        <y>0</y>
-        <width>331</width>
-        <height>401</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
+       <item row="9" column="2">
+        <widget class="QRadioButton" name="inpRK3">
+         <property name="text">
+          <string>Runge Kutta Third Order</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <widget class="QRadioButton" name="inpEu">
+         <property name="text">
+          <string>Euler (Runge Kutta First Order)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QDoubleSpinBox" name="startX">
+         <property name="decimals">
+          <number>10</number>
+         </property>
+         <property name="minimum">
+          <double>-99999999999.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>99999999999.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="5" rowspan="2">
         <widget class="QLabel" name="label_8">
          <property name="text">
           <string>Output:</string>
@@ -581,8 +572,71 @@
          </property>
         </widget>
        </item>
-       <item>
-        <widget class="QTextBrowser" name="outTextODE"/>
+       <item row="8" column="2">
+        <widget class="QRadioButton" name="inpRK2">
+         <property name="text">
+          <string>Runge Kutta Second Order</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="2">
+        <widget class="QRadioButton" name="inpMP">
+         <property name="text">
+          <string>Milne's Predictor Corrector</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QDoubleSpinBox" name="endX">
+         <property name="decimals">
+          <number>10</number>
+         </property>
+         <property name="minimum">
+          <double>-99999999999.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>99999999999.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLineEdit" name="funcInpODE"/>
+       </item>
+       <item row="4" column="2">
+        <widget class="QDoubleSpinBox" name="startY">
+         <property name="decimals">
+          <number>10</number>
+         </property>
+         <property name="minimum">
+          <double>-99999999999.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>99999999999.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" rowspan="2" colspan="3">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>Input:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0">
+        <spacer name="verticalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </widget>
@@ -591,8 +645,8 @@
    <widget class="QPushButton" name="btnQuit">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>540</y>
+      <x>370</x>
+      <y>570</y>
       <width>191</width>
       <height>32</height>
      </rect>
@@ -605,17 +659,17 @@
     </property>
    </widget>
   </widget>
+  <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1017</width>
+     <width>1108</width>
      <height>31</height>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

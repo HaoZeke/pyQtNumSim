@@ -28,6 +28,7 @@ class MyApp(QMainWindow, Ui_MainWindow):
         self.btnQuit.clicked.connect(qApp.quit)
         self.btnCalcRoot.clicked.connect(self.calcRootMenu)
         self.btnCalcLAS.clicked.connect(self.calcLASMenu)
+        self.btnCalcODE.clicked.connect(self.calcODEMenu)
 
 
     def calcRootMenu(self):
@@ -185,6 +186,50 @@ class MyApp(QMainWindow, Ui_MainWindow):
        self.outTextLA.append("\nThe X vector is \n" + str(x.reshape((-1,1))))
        self.outTextLA.append("\nObtained in \n" + str(itr) + " iterations.")
 
+    def calcODEMenu(self):
+        try:
+            if self.inpEu.isChecked() == true:
+                self.calcODERK1()
+            if self.inpRK2.isChecked() == true:
+                self.calcODERK2()
+            if self.inpRK3.isChecked() == true:
+                self.calcODERK3()
+            if self.inpRK4.isChecked() == true:
+                self.calcODERK4()
+            if self.inpMP.isChecked() == true:
+                self.calcODEMP()
+            if self.btnGrpRF.checkedId() == -1:
+                QMessageBox.warning(self, "User Warning","Choose a method.")
+        except Exception as e:
+            raise
+        else:
+            pass
+        finally:
+            pass
+
+    def calcODERK1(self):
+        # Needs to be modularized
+        f = self.funcInpODE.text()
+        if not f:
+            QMessageBox.warning(self, "User Warning","Enter an equation.")
+        else:
+            startX = self.startX.value()
+            startY = self.startY.value()
+            endX = self.endX.value()
+            if self.stepSize.text():
+                stepSize = float(self.stepSize.text())
+                MRKOde.rk1(f,startX,startY,endX,h=stepSize)
+            else:
+                self.outTextRoot.append("<b> Euler's Method </b><br> \
+                    For the function " + self.funcInpRoot.text())
+                MRKOde.rk1(f,startX,startY,endX)
+            self.outTextRoot.append("The root is approximately " + repr(x))
+            if niter < 100:
+                self.outTextRoot.append("After " + str(niter) + " iterations.")
+            else:
+                self.outTextRoot.append("After the maximum allowed iterations.")
+            self.outTextRoot.append("At the approximate root, the function is " \
+             + repr(xval))
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
