@@ -1,4 +1,4 @@
-# pyQtNumSim  [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/HaoZeke/)
+# pyQtNumSim  [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=for-the-badge)](https://www.paypal.me/HaoZeke/)   
 
 > Copyright (C) 2017  Rohit Goswami
 
@@ -57,7 +57,16 @@ Additionally the following books and resources have been used (also mentioned in
 
 ## Contributions
 Pull requests welcome!
+
 Please add yourself to the Contributors file as well, with a summary and contact details (optinal).
+
+## Issues
+Bug tracking is done with [waffle.io](https://waffle.io/)
+
+Keep track of the current state of the project [here](https://waffle.io/HaoZeke/pyQtNumSim).
+
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/HaoZeke/pyQtNumSim.svg?columns=all&style=flat-square)](https://waffle.io/HaoZeke/pyQtNumSim)
+
 
 ## License
 The code itself is under the [GNU AGPLv3](https://choosealicense.com/licenses/agpl-3.0/) however it is built with PyQt, so as per [this](https://opensource.stackexchange.com/questions/5383/under-what-licenses-can-i-release-open-source-software-that-uses-pyqt) StackExchange thread, the PyQT portion is under the [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/).
