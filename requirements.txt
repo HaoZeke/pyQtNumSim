@@ -1,5 +1,5 @@
-sympy==1.1.1
-scipy==1.0.0
-numpy==1.13.3
+scipy==1.0.1
+numpy==1.14.2
 PyQt5==5.10.1
 automodinit==0.16
+sympy==1.1.1
