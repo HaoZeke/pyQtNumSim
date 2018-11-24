@@ -58,7 +58,7 @@ Additionally the following books and resources have been used (also mentioned in
 ## Contributions
 Pull requests welcome!
 
-Please add yourself to the Contributors file as well, with a summary and contact details (optinal).
+Please add yourself to the Contributors file as well, with a summary and contact details (optional).
 
 ## Issues
 Bug tracking is done with [waffle.io](https://waffle.io/)
