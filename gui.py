@@ -65,8 +65,6 @@ class MyApp(QMainWindow, Ui_MainWindow):
                 QMessageBox.warning(self, "User Warning","Choose a method.")
         except Exception as e:
             raise
-        else:
-            pass
         finally:
             pass
             
@@ -165,8 +163,6 @@ class MyApp(QMainWindow, Ui_MainWindow):
                 QMessageBox.warning(self, "User Warning","Choose a method.")
         except Exception as e:
             raise
-        else:
-            pass
         finally:
             pass
             
@@ -220,8 +216,6 @@ class MyApp(QMainWindow, Ui_MainWindow):
                 QMessageBox.warning(self, "User Warning","Choose a method.")
         except Exception as e:
             raise
-        else:
-            pass
         finally:
             pass
 

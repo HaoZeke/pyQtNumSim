@@ -32,7 +32,7 @@ import copy
 def nGaussElim():
 	n = len(b)
 	# Elimination Phase
-	for k in range(0,n-1):
+	for k in range(n-1):
 		for i in range(k+1,n):
 			if a[i,k] != 0.0:
 				lam = a[i,k]/a[k,k]
