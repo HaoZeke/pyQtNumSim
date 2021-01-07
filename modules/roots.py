@@ -41,16 +41,16 @@ def bisection(f,x1,x2,tol=1.0e-9,switch=1):
 
 	f1 = fx.subs({sym_x : x1})
 	if f1 == 0.0 : return x1	
-	
+
 	f2 = fx.subs({sym_x : x2})
 	if f2 == 0.0 : return x2
 
 	if not (f1*f2 < 0):
 		print('Root is not bracketed')
-	
+
 	n = int(math.ceil(math.log(abs(x2-x1)/tol)/math.log(2)))
 
-	for i in range(n):
+	for _ in range(n):
 		x3 = 0.5*(x1+x2); f3 = fx.subs({sym_x : x3})
 		if (switch == 1) and (abs(f3) > abs(f1)) \
 		and (abs(f3) > abs(f2)):
@@ -63,8 +63,7 @@ def bisection(f,x1,x2,tol=1.0e-9,switch=1):
 	# Declare a result tuple
 	r = 0.5*(x1 + x2)
 	xval = fx.subs({sym_x : r},)
-	result = (r,n,xval)
-	return result
+	return r, n, xval
 
 
 ''' root = newtonRaphson(f,guessX,precision=1.0e-9)
